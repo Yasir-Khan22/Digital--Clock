@@ -4,6 +4,29 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: url("https: //images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  background: url("../images/sunSet.jpg");
+  background-size: cover;
+}
 
+h2 {
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.clock {
+  display: flex;
+  font-size: 1rem;
+}
+
+.clock div {
+  margin: 0.55rem;
+}
+
+.clock div span {
+  max-width: 100px;
+  max-height: 80px;
+  background: hsl(254, 55%, 6%);
+  opacity: 0.8;
+  color: #fff;
 }
