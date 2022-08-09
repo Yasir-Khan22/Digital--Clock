@@ -39,7 +39,8 @@ h2 {
 
 .clock .text {
   height: 30px;
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: bold;
   background: rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
   letter-spacing: 2px;
