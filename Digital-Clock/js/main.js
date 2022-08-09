@@ -1,7 +1,7 @@
-// const hour = document.getElementById("hour")
-// const minute = document.getElementById("minutes")
-// const seconds = document.getElementById("seconds")
-// const ap_pm = document.getElementById("am__pm")
+const hour = document.getElementById("hour")
+const minute = document.getElementById("minutes")
+const seconds = document.getElementById("seconds")
+const ap_pm = document.getElementById("am__pm")
 
 function formatAMPM(date) {
     let h = new Date().getHours();
@@ -14,6 +14,7 @@ function formatAMPM(date) {
     h = h % 12;
     h = h ? h : 12; // the hour '0' should be '12'
     m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + m : m;
     var strTime = h + ':' + m + ' ' + ampm;
     return strTime;
 }
