@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 /node_modules
+.js/counter.js
+.images/bridge.jpg
+.images/javascript.jpg
+.images/man-with-sun.jpg
