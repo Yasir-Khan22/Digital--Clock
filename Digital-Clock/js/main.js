@@ -1,27 +1,58 @@
-const hour = document.getElementById("hour")
-const minute = document.getElementById("minutes")
-const seconds = document.getElementById("seconds")
-const ap_pm = document.getElementById("am__pm")
+const hourElem = document.getElementById("hour")
+const minuteElem = document.getElementById("minutes")
+const secondsElem = document.getElementById("seconds")
+const ap_pmElem = document.getElementById("am__pm")
 
-function formatAMPM(date) {
-    let h = new Date().getHours();
-    let m = new Date().getMinutes();
-    let s = new Date().getSeconds();
-    console.log(h)
-    console.log(m)
-    console.log(s)
 
-    h = h % 12;
-    h = h ? h : 12; // the hour '0' should be '12'
-    m = m < 10 ? '0' + { m } : m;
-    s = s < 10 ? '0' + { s } : m;
+// METHOD NUMBER 1;
 
-    var ampm = h >= 12 ? 'pm' : 'am';
+// function updateClock() {
+//     let h = new Date().getHours();
+//     let m = new Date().getMinutes();
+//     let s = new Date().getSeconds();
 
-    hour.innerText = h;
-    minute.innerText = m;
-    seconds.innerText = s;
-    ampm.innerText = ampm;
+//     let ampm = "AM";
 
-}
-formatAMPM()
+//     if (h > 12) {
+//         h = h - 12;
+//         ampm = "PM";
+//     }
+
+//     hour.innerText = h;
+//     minute.innerText = m;
+//     seconds.innerText = s;
+//     ap_pm.innerText = ampm;
+
+//     setTimeout(() => {
+//         updateClock()
+//     }, 1000)
+
+// }
+// updateClock()
+
+
+// METHOD NUMBER 2;
+const updateClock = (date) => {
+    let hours = new Date().getHours();
+    let minutes = new Date().getMinutes();
+    let seconds = new Date().getSeconds()
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours %= 12;
+    hours = hours || 12;
+
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    hourElem.innerText = `${hours}`;
+    minuteElem.innerText = `${minutes}`;
+    secondsElem.innerText = `${seconds}`;
+    ap_pmElem.innerText = ampm;
+
+    setTimeout(() => {
+        updateClock()
+    }, 1000)
+
+};
+
+console.log(updateClock(new Date()));
